@@ -1,0 +1,98 @@
+#myCanvas {
+    background-color: black;
+    border: 2px solid black;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 30px;
+}
+
+.containerInput {
+    display: flex;
+    /* flex-wrap: wrap; */
+    height: 30px;
+}
+
+
+.align {
+    align-items: center;
+    width: 80px;
+}
+
+#rules {
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.noBotMargin {
+    margin-bottom: 0px;
+}
+
+.noTopMargin {
+    margin-top: 0px;
+}
+
+input {
+    width: 20px;
+    height: 20px;
+    margin: 0 5 0 5
+}
+
+.botSpace {
+    margin-bottom: 25px;
+}
+
+.slider {
+    width: auto;
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+#deadMessage {
+    color: white;
+    font-size: 13px;
+}
+
+#sliderDivs {
+    display: flex;
+
+    /* justify-content: right; */
+}
+
+.sliderDiv {
+    margin-right: 20px;
+}
+
+#basicButtons {
+    width: 200px;
+}
+
+#buttonsSliders {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    margin: auto;
+}
+
+body {
+    min-width: 1220px;
+}
+
+.spaced {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sliderDiv * {
+    text-align: center;
+}

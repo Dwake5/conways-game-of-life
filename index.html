@@ -1,0 +1,88 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Life</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body class='centered'>
+        <h1>Game of Life</h1>
+        <h4>RIP John Conway 1937-2020</h4>
+        
+        <p>The <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>Game of Life</a>, often abbreviated to Life, was made by Conway in 1970. It is a computer simulation showing how randomness and complexity can result from very simple conditions. Life is turing complete and non-determinsitic. Many patterns emerge:</p>
+        <ol>
+            <li>Still lifes - A segment will stay still.</li>
+            <li>Oscillators - They will oscilate between a few patterns.</li>
+            <li>Spaceships - They travel in one direction.</li>
+            <li>Guns - They will continue to osciallate whilst creating new spaceships.</li>
+        </ol>
+        <p>Examples of each can be found in the dropdown below (not yet implemented).</p>
+        
+        <div class='container'>
+            <div id='rules'>
+                <!-- Change this, target all under h2 -->
+                <h2 class='noTopMargin'>Rules of life</h2>
+                <p class='noBotMargin'>Underpopulation:</p>
+                <p class=noTopMargin>A cell with less than two alive adjacent cells dies.</p>
+                <p class='noBotMargin'>Overpopulation:</p>
+                <p class='noTopMargin'>A cell with four or more alive adjacent cells dies.</p>
+                <p class='noBotMargin'>Reproduction:</p>
+                <p class='noTopMargin'>A dead cell with exactly three alive cells becomes alive.</p>
+                <p class='noBotMargin'>Homeostasis:</p> 
+                <p class='noTopMargin'>An alive cell with two or three alive neighbours lives on.</p>
+
+                <h2>Change the Rules of Life</h2>
+                <p class='noBotMargin'>Cells live on between</p>
+                <div class='containerInput align '>
+                    <input value='2' id='minAlive' maxlength='1' onkeypress='validate(event)'></input>
+                    <p>and</p>
+                    <input value='3' id='maxAlive' maxlength='1' onkeypress='validate(event)'></input>
+                </div>
+                <p class='noTopMargin botSpace'>alive adjacent cells.</p>
+                
+
+                <p class='noBotMargin'>Dead cells are repopulate when between</p>
+                <div class='containerInput align'>
+                    <input value='3' id='minDead' maxlength='1' onkeypress='validate(event)'></input>
+                    <p>and</p>
+                    <input value='3' id='maxDead' maxlength='1' onkeypress='validate(event)'></input>
+                </div>
+                <p class='noTopMargin'>adjacent cells are alive.</p>
+                <button onclick='resetDefaults()'>Reset to defaults</button>
+
+            </div>
+            <div >
+                <canvas id='myCanvas' width='1000' height = '620'></canvas>
+                <div id='buttonsSliders'>
+                    <div id='basicButtons'>
+                        <select id="cars">
+                            <option>Free draw</option>
+                            <option>Still Lifes</option>
+                            <option>Oscillators</option>
+                            <option>Guns</option>
+                        </select>
+                        <button id='run' onclick='switchRunning()'>Run</button>
+                        <button onclick='handleClear()'>Clear</button>
+                        <p id='deadMessage' class ='noBotMargin noTopMargin'>Oh no, everybody died!</p>
+                    </div>
+                    <div id='sliderDivs'>
+                        <div class='sliderDiv'>
+                            <h3>Tile size:</h3>
+                            <p id='changeSize' class='noBotMargin noTopMargin'>20 px</p>
+                            <input id="sizeSlider" class='slider' onchange='handleSizeSlider(event)' type="range" min=10 max=20 value=20>
+                        </div>
+                        <div class='sliderDiv'>
+                            <h3>Iteration Speed:</h3>
+                            <p id='changeSpeed' class='noBotMargin noTopMargin '>500 ms</p>
+                            <input id="speedSlider" class='slider' type="range" min=100 max=1000 step=100 value=500>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div >
+            </div>
+        </div>
+
+        <script src='life.js'></script>
+    </body>
+</html>
