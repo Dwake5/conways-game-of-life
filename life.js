@@ -139,13 +139,19 @@ const switchRunning = () => {
 }
 
 const runLife = () => {
-    setInterval(function(){
+    let startInt = iterationSpeed
+    let interval = setInterval(function(){
         if(running) {
             updateTiles()
+            if (startInt !== iterationSpeed) {
+                clearInterval(interval)
+                runLife()
+            }
+        } else {
+            clearInterval(interval)
         }
     }, iterationSpeed)
 }
-
 
 resetDefaults = () => {
     document.getElementById('minAlive').value = 2
