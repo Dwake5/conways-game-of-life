@@ -41,7 +41,7 @@
                 <p class='noTopMargin botSpace'>alive adjacent cells.</p>
                 
 
-                <p class='noBotMargin'>Dead cells are repopulate when between</p>
+                <p class='noBotMargin'>Dead cells are repopulated when between</p>
                 <div class='containerInput align'>
                     <input value='3' id='minDead' maxlength='1' onkeypress='validate(event)'></input>
                     <p>and</p>
@@ -55,14 +55,19 @@
                 <canvas id='myCanvas' width='1000' height = '620'></canvas>
                 <div id='buttonsSliders'>
                     <div id='basicButtons'>
-                        <select id="cars">
+                        <select id='dropdown' >
                             <option>Free draw</option>
-                            <option>Still Lifes</option>
-                            <option>Oscillators</option>
-                            <option>Guns</option>
+                            <option value='stillLife'>Still Lifes</option>
+                            <option value='oscillator'>Oscillators</option>
+                            <option>Spaceships</option>
+                            <option value='light'>Light weight</option>
+                            <option value='medium'>Medium weight</option>
+                            <option value='heavy'>Heavy weight</option>
+                            <option value='guns'>Guns</option>
                         </select>
                         <button id='run' onclick='switchRunning()'>Run</button>
                         <button onclick='handleClear()'>Clear</button>
+                        <!-- <button onclick='tellMeAlive()'>Whats alive?</button> -->
                         <p id='deadMessage' class ='noBotMargin noTopMargin'>Oh no, everybody died!</p>
                     </div>
                     <div id='sliderDivs'>
@@ -84,5 +89,6 @@
         </div>
 
         <script src='life.js'></script>
+        <script src='patterns.js'></script>
     </body>
 </html>
