@@ -16,8 +16,7 @@ All rules cover the 8 directions, adjacents and diagonals.
 If an alive cell has two or three alive neighbours, it continues to live on. 
 If a dead cell has exactly three alive neighbours, it becomes alive.
 
-
-## Features added
+## Features Added
 
 Play the game of life.
 A grid which start off as 20px squares, but can be reduced to 10px.
