@@ -5,7 +5,6 @@ let ctx
 
 const sizeSlider = document.getElementById("sizeSlider");
 const speedSlider = document.getElementById("speedSlider");
-let output = document.getElementById("demo")
 
 let tileSize = 19
 const gap = 1
@@ -24,6 +23,7 @@ let boundY
 let running = false
 
 let iterationSpeed = 500
+let dropdown = document.getElementById('dropdown')
 
 let tiles = []
 const freshGrid = () => {
@@ -157,7 +157,6 @@ const runLife = () => {
         } else {
             clearInterval(interval)
         }
-    console.log('called')
     }, iterationSpeed)
 }
 
@@ -227,6 +226,8 @@ const handleSizeSlider = () => {
     writeRun()
     tileSize = parseInt(sizeSlider.value)-1
     freshGrid()
+    ticks.innerHTML = 0
+    dropdown.value = 'free'
 }
 
 const writeRun = () => {
