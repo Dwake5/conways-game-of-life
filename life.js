@@ -1,5 +1,3 @@
-// import patterns.js from 
-
 let canvas 
 let ctx 
 
@@ -37,13 +35,13 @@ const freshGrid = () => {
 
 function validate(evt) {
     let theEvent = evt || window.event;
-  
+    let key
     // Handle paste
     if (theEvent.type === 'paste') {
         key = event.clipboardData.getData('text/plain');
     } else {
     // Handle key press
-        let key = theEvent.keyCode || theEvent.which;
+        key = theEvent.keyCode || theEvent.which;
         key = String.fromCharCode(key);
     }
     let regex = /[0-8]/;
@@ -98,6 +96,7 @@ const myDown = e => {
                     tiles[c][r].alive = true
                     boundX = c
                     boundY = r
+                    // Used to make new presets
                     // console.log(c + ' , ' + r)
                 }
             }
