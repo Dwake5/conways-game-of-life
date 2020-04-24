@@ -7,6 +7,7 @@
 h1 {
     text-align: center;
     text-decoration: underline;
+    margin-bottom: 0px;
 }
 
 h2 {
@@ -19,10 +20,9 @@ h3 {
     margin: auto;
 }
 
-/* input {
-    border: none;
-    border-bottom: 2px solid red;
-} */
+h4 {
+    margin-top: 10px;
+}
 
 .container {
     display: flex;
@@ -34,6 +34,7 @@ h3 {
     display: flex;
     /* flex-wrap: wrap; */
     height: 30px;
+    margin-left: 10px;
 }
 
 .align {
@@ -57,7 +58,28 @@ h3 {
 input {
     width: 20px;
     height: 20px;
-    margin: 0 5 0 5
+    margin: 0 5 0 5;
+    /* padding-left: 6px; */
+    border: none;
+    background: rgb(220, 220, 220);
+    box-shadow: 1px 1px 0px 1px #888888;
+}
+
+.containerInput input {
+    padding-left: 6px;
+}
+
+.containerInput input:hover {
+    transition-duration: 0.4s;
+    box-shadow: 1px 1px 0px 1px #888888;
+    width: 22px;
+    height: 22px;
+    padding-top: 1px;
+    padding-left: 6px;
+}
+
+.resetButton {
+    margin-left: 25px;
 }
 
 .botSpace {
@@ -71,8 +93,10 @@ input {
 }
 
 #deadMessage {
-    color: white;
+    min-height: 12px;
+    color: red;
     font-size: 13px;
+    display: none;
 }
 
 #sliderDivs {
@@ -83,9 +107,45 @@ input {
     margin-right: 20px;
 }
 
-/* #basicButtons {
-    width: 200px;
-} */
+.thinLine {
+    border-top: .5px solid black;
+    width: 90%
+}
+
+button {
+    background: rgb(170, 170, 170);
+    border: none;
+    color: black;
+} 
+
+button:hover {
+    cursor: pointer;
+    background: rgb(150, 150, 150);
+}
+
+button:after {    
+    background: none repeat scroll 0 0 transparent;
+
+    content: "";
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: relative;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+button:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+
+.buttonResize {
+    width: 80px;
+    margin-left: 10px;
+    font-size: 14px;
+}
 
 #buttonsAndSliders {
     display: flex;
@@ -97,6 +157,8 @@ input {
 
 body {
     min-width: 1220px;
+    margin: 0 20 0 20;
+    background: rgb(200, 200, 200)
 }
 
 .spaced {
@@ -109,14 +171,6 @@ body {
     text-align: center;
 }
 
-/* #iterations {
-    float: left;
-} */
-
-/* div {
-    border: 2px solid black;
-} */
-
 #buttons {
     float: left
 }
@@ -127,4 +181,10 @@ body {
 
 #ticks {
     margin-left: 10px;
+}
+
+select {
+    -webkit-appearance: menulist-button;
+    height: 23px;
+    background: rgb(170, 170, 170)
 }

@@ -31,7 +31,7 @@
                 <p class='noBotMargin'>Homeostasis:</p> 
                 <p class='noTopMargin'>An alive cell with two or three alive neighbours lives on.</p>
 
-                <h2>Change the Rules of Life</h2>
+                <h2 class='thinLine'>Change the Rules of Life</h2>
                 <p class='noBotMargin'>Cells live on between</p>
                 <div class='containerInput align '>
                     <input value='2' id='minAlive' maxlength='1' onkeypress='validate(event)'></input>
@@ -48,8 +48,7 @@
                     <input value='3' id='maxDead' maxlength='1' onkeypress='validate(event)'></input>
                 </div>
                 <p class='noTopMargin'>adjacent cells are alive.</p>
-                <button onclick='resetDefaults()'>Reset to defaults</button>
-
+                <button class='resetButton' onclick='resetDefaults()'>Reset defaults</button>
             </div>
             <div >
                 <canvas id='myCanvas' width='1000' height = '619'></canvas>
@@ -65,8 +64,8 @@
                                 <option value='heavy'>Heavy weight spaceship</option>
                                 <option value='guns'>Gosper glider Gun</option>
                             </select>
-                            <button id='run' onclick='switchRunning()'>Run</button>
-                            <button onclick='handleClear()'>Clear</button>
+                            <button id='run' class='buttonResize' onclick='switchRunning()'>Run</button>
+                            <button class='buttonResize' onclick='handleClear()'>Clear</button>
                             <!-- <button onclick='tellMeAlive()'>Whats alive?</button> -->
                         </div>
                         <div>

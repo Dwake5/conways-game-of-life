@@ -33,7 +33,7 @@ const freshGrid = () => {
     }
 }
 
-function validate(evt) {
+const validate = evt => {
     let theEvent = evt || window.event;
     let key
     // Handle paste
@@ -174,10 +174,14 @@ updateTiles = () => {
     
     // Set a variable for what lives next round
     let newAlive = []
+    let aliveCount = 0
     // Map over current tiles
     for (c = 0; c < tileColumnCount; c++) {
         for (r = 0; r < tileRowCount; r++) {
             let count = countAdjacent(c,r)
+            if (tiles[c][r].alive) {
+                aliveCount++
+            }
             if (tiles[c][r].alive && minAlive <= count && count <= maxAlive) {
                 newAlive.push([c,r])
             } else if (!tiles[c][r].alive && minDead <= count && count <= maxDead) {
@@ -186,7 +190,7 @@ updateTiles = () => {
         }
     }
     if (newAlive.length == 0) {
-        handleDeath()
+        handleDeath(aliveCount)
     }
     freshGrid()
     for (i = 0; i < newAlive.length; i++) {
@@ -244,11 +248,13 @@ const handleClear = () => {
     ticks.innerHTML = 0
 }
 
-const handleDeath = () => {
+const handleDeath = (prevAlive) => {
     running = false
     writeRun()
-    document.getElementById('deadMessage').style.color='red'
-    setTimeout(function(){document.getElementById('deadMessage').style.color='white'}, 3000)
+    if (prevAlive > 0) {
+        document.getElementById('deadMessage').style.display = 'block'
+        setTimeout(function(){document.getElementById('deadMessage').style.display = 'none'}, 3000)
+    }
     ticks.innerHTML = -1
 }
 
