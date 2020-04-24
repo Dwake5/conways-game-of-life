@@ -1,6 +1,7 @@
 #myCanvas {
     background-color: black;
     border: 2px solid black;
+    margin-bottom: 5px;
 }
 
 h1 {
@@ -19,7 +20,6 @@ h1 {
     /* flex-wrap: wrap; */
     height: 30px;
 }
-
 
 .align {
     align-items: center;
@@ -62,21 +62,21 @@ input {
 
 #sliderDivs {
     display: flex;
-
-    /* justify-content: right; */
 }
 
 .sliderDiv {
     margin-right: 20px;
 }
 
-#basicButtons {
+/* #basicButtons {
     width: 200px;
-}
+} */
 
-#buttonsSliders {
+#buttonsAndSliders {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    /* border: 2px solid black; */
 }
 
 h3 {
@@ -95,4 +95,24 @@ body {
 
 .sliderDiv * {
     text-align: center;
+}
+
+/* #iterations {
+    float: left;
+} */
+
+/* div {
+    border: 2px solid black;
+} */
+
+#buttons {
+    float: left
+}
+
+#iterations {
+    display: flex;
+}
+
+#ticks {
+    margin-left: 10px;
 }

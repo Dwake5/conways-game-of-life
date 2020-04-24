@@ -9,14 +9,14 @@
         <h1>Game of Life</h1>
         <h4>RIP John Conway 1937-2020</h4>
         
-        <p>The <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>Game of Life</a>, often abbreviated to Life, was made by Conway in 1970. It is a computer simulation showing how randomness and complexity can result from very simple conditions. Life is turing complete and non-determinsitic. Many patterns emerge:</p>
+        <p>The <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>Game of Life</a>, often abbreviated to Life, was made by <a href='https://en.wikipedia.org/wiki/John_Horton_Conway'>Conway</a> in 1970. It is a computer simulation showing how randomness and complexity can result from very simple conditions. Life is turing complete and non-determinsitic. Many patterns eventually emerge:</p>
         <ol>
             <li>Still lifes - A segment will stay still.</li>
             <li>Oscillators - They will oscilate between a few patterns.</li>
             <li>Spaceships - They travel in one direction.</li>
             <li>Guns - They will continue to osciallate whilst creating new spaceships.</li>
         </ol>
-        <p>Examples of each can be found in the dropdown below (not yet implemented).</p>
+        <p>Examples of each can be found in the dropdown below.</p>
         
         <div class='container'>
             <div id='rules'>
@@ -52,23 +52,30 @@
 
             </div>
             <div >
-                <canvas id='myCanvas' width='1000' height = '620'></canvas>
-                <div id='buttonsSliders'>
+                <canvas id='myCanvas' width='1000' height = '619'></canvas>
+                <div id='buttonsAndSliders'>
                     <div id='basicButtons'>
-                        <select id='dropdown' >
-                            <option>Free draw</option>
-                            <option value='stillLife'>Still Lifes</option>
-                            <option value='oscillator'>Oscillators</option>
-                            <option>Spaceships</option>
-                            <option value='light'>Light weight</option>
-                            <option value='medium'>Medium weight</option>
-                            <option value='heavy'>Heavy weight</option>
-                            <option value='guns'>Guns</option>
-                        </select>
-                        <button id='run' onclick='switchRunning()'>Run</button>
-                        <button onclick='handleClear()'>Clear</button>
-                        <!-- <button onclick='tellMeAlive()'>Whats alive?</button> -->
-                        <p id='deadMessage' class ='noBotMargin noTopMargin'>Oh no, everybody died!</p>
+                        <div id='buttons'>
+                            <select id='dropdown' >
+                                <option>Free draw</option>
+                                <option value='stillLife'>Still Lifes</option>
+                                <option value='oscillator'>Oscillators</option>
+                                <option value='light'>Light weight spaceship</option>
+                                <option value='medium'>Medium weight spaceship</option>
+                                <option value='heavy'>Heavy weight spaceship</option>
+                                <option value='guns'>Gosper glider Gun</option>
+                            </select>
+                            <button id='run' onclick='switchRunning()'>Run</button>
+                            <button onclick='handleClear()'>Clear</button>
+                            <!-- <button onclick='tellMeAlive()'>Whats alive?</button> -->
+                        </div>
+                        <div>
+                            <p id='deadMessage' class='noBotMargin noTopMargin'>Oh no, everybody died!</p>
+                        </div>
+                    </div>
+                    <div id='iterations'>
+                        <p class='noBotMargin noTopMargin'>Iterations:</p>
+                        <p id='ticks' class='noBotMargin noTopMargin'>0</p>
                     </div>
                     <div id='sliderDivs'>
                         <div class='sliderDiv'>
@@ -77,7 +84,7 @@
                             <input id="sizeSlider" class='slider' onchange='handleSizeSlider(event)' type="range" min=10 max=20 value=20>
                         </div>
                         <div class='sliderDiv'>
-                            <h3>Iteration Speed:</h3>
+                            <h3 class='noTopMargin noBotMargin'>Iteration Speed:</h3>
                             <p id='changeSpeed' class='noBotMargin noTopMargin '>500 ms</p>
                             <input id="speedSlider" class='slider' type="range" min=100 max=1000 step=100 value=500>
                         </div>

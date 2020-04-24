@@ -10,6 +10,8 @@ let output = document.getElementById("demo")
 let tileSize = 19
 const gap = 1
 
+const ticks = document.getElementById('ticks')
+
 const width = document.getElementById('myCanvas').width
 const height = document.getElementById('myCanvas').width
 
@@ -96,7 +98,7 @@ const myDown = e => {
                     tiles[c][r].alive = true
                     boundX = c
                     boundY = r
-                    console.log(c + ' , ' + r)
+                    // console.log(c + ' , ' + r)
                 }
             }
         }
@@ -147,6 +149,7 @@ const runLife = () => {
     let interval = setInterval(function(){
         if(running) {
             updateTiles()
+            ticks.innerHTML++
             if (startInt !== iterationSpeed) {
                 clearInterval(interval)
                 runLife()
@@ -154,6 +157,7 @@ const runLife = () => {
         } else {
             clearInterval(interval)
         }
+    console.log('called')
     }, iterationSpeed)
 }
 
@@ -237,6 +241,7 @@ const handleClear = () => {
     running = false
     writeRun()
     freshGrid()
+    ticks.innerHTML = 0
 }
 
 const handleDeath = () => {
@@ -244,6 +249,7 @@ const handleDeath = () => {
     writeRun()
     document.getElementById('deadMessage').style.color='red'
     setTimeout(function(){document.getElementById('deadMessage').style.color='white'}, 3000)
+    ticks.innerHTML = -1
 }
 
 sizeSlider.oninput = function() {
@@ -285,11 +291,11 @@ const presets = {
 document.getElementById('dropdown').onchange = function() {
     let dropdown = document.getElementById('dropdown').value
     freshGrid()
-    if (dropdown === 'reset') {
-
-    } else {
+    if (dropdown !== 'reset') {
         resetDefaults()
         populateCells(presets[dropdown])
+        ticks.innerHTML = 0
+        running = false
     }
 
 }

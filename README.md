@@ -5,7 +5,7 @@ John Conway was a mathematician who died of Coronavirus, he was arguably best kn
 
 ## What is it?
 
-The goal of Life was to show how a large amount of complexity and chaos can result from very simple rules, it is non deterministic. Cells represent little communities. To start some cells are placed on the grid and then after each iteration or generation that passes dead cells can come alive or alive cells can die. The rules were designed to not allow for rapid or expansive growth.
+The goal of Life was to show how a large amount of complexity and chaos can result from very simple rules. It is non deterministic in that you can't. Cells represent little communities. To start some cells are placed on the grid and then after each iteration or generation that passes dead cells can come alive or alive cells can die. The rules were designed to not allow for rapid or expansive growth.
 If a cell has too few neigbours it dies as if by loneliness, with too many it dies of overcrowding. A dead cell can repopulate with the correct amount of neighbours as though seizing a niche habitation. 
 
 
