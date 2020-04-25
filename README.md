@@ -1,3 +1,7 @@
+## Live version
+
+https://dwake5.github.io/conways-game-of-life/
+
 ## Game of Life
 
 John Conway was a mathematician who died of Coronavirus, he was arguably best known for his cellular automata The Game of Life (Life), this tied with my long standing interest in the simulation I decided to program it. I have added a few features that I havent seen elsewhere, namely the ability to change The Rules of Life.
